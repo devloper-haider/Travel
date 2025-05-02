@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tourist Website Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full flex items-center justify-between px-8 py-4 bg-cyan-500 shadow-lg z-50">
+        <!-- Logo -->
+        <div class="text-2xl font-extrabold text-white">
+            <a href="#hero">Tour&Travelers</a>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex space-x-10">
+            <a href="#hero" class="text-white text-lg hover-glow">Home</a>
+            <a href="#about" class="text-white text-lg hover-glow">About</a>
+            <a href="#places" class="text-white text-lg hover-glow">Places</a>
+            <a href="#packages" class="text-white text-lg hover-glow">Packages</a>
+            <a href="#contact" class="text-white text-lg hover-glow">Contact</a>
+        </div>
+
+        <!-- Buttons for Desktop -->
+        <div class="hidden md:flex relative space-x-2">
+            <button
+                class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-5 rounded-full shadow-md z-10">
+                Sign In
+            </button>
+            <button
+                class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-5 rounded-full shadow-lg -ml-6">
+                Register
+            </button>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="md:hidden flex items-center">
+            <button id="menu-btn" class="text-white text-3xl focus:outline-none">
+                &#9776;
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="menu" class="hidden flex flex-col items-center space-y-6 bg-cyan-600 py-6 mt-20 md:hidden">
+        <a href="#contact" class="text-white text-lg hover-glow">Contact</a>
+        <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-8 rounded-full shadow-md">
+            Sign In
+        </button>
+        <button class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-8 rounded-full shadow-lg">
+            Register
+        </button>
+    </div>
+    <section id="hero" class="relative w-full h-screen bg-center bg-cover flex items-center justify-center text-center"
+        style="background-image: url('assests/bg1.jpg'); background-size: cover; background-repeat: no-repeat;">
+
+        <!-- Content Centered -->
+        <div class="text-white animate-pop">
+            <h1 id="typed-text" class="text-6xl md:text-8xl font-extrabold mb-6 drop-shadow-lg"></h1>
+            <p class="text-xl md:text-2xl mb-8 drop-shadow-md">Adventure is out there. Life is short and the world is
+                wide. <br> Let’s start your next journey today.</p>
+            <a href="explore.html"
+                class="gradient-btn px-10 py-4 rounded-full text-xl font-bold shadow-lg animate-pop hover:scale-110 transition-all duration-500">
+                Start Exploring
+            </a>
+        </div>
+
+    </section>
+    <section class="w-full bg-white py-20 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-12"
+        id="about">
+        <!-- Left Side Text -->
+        <div class="md:w-1/2 space-y-6 flex flex-col items-start">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">About Us</h2>
+            <p class="text-lg text-gray-600">
+                Your safety is our priority. Since 2005, we have been providing secure, comfortable, and unforgettable
+                travel experiences around the globe. Our commitment to safety and personalized services has earned us
+                the
+                trust of thousands of travelers worldwide.
+            </p>
+            <p class="text-lg text-gray-600">
+                From luxury tours to adventure expeditions, we ensure every journey is crafted with care,
+                professionalism, and a passion for exploration.
+            </p>
+            <a href="about.html"
+                class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-lg font-semibold hover:scale-105 transition-all duration-500">
+                Learn More
+            </a>
+        </div>
+
+        <!-- Right Side Images Properly -->
+        <div class="md:w-1/2 relative flex gap-4 ml-8"> <!-- Added 'ml-8' to add space -->
+            <div class="relative group">
+                <!-- Circular Image with Neon Effect -->
+                <div class="neon-image"
+                    style="width: 550px; height: 500px; overflow: hidden; border-radius: 10%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="assests/bg3.jpg" alt="Team working" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="m-0 p-0" id="places">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-8">Places You Have To Visit Before You
+            RIP</h2>
+        <div class="relative w-full h-screen overflow-hidden">
+            <!-- Background Image -->
+            <div id="slider" class="w-full h-full bg-cover bg-center transition-all duration-700 ease-in-out"></div>
+
+            <!-- Text Content -->
+            <div id="textContent" class="absolute bottom-10 left-10 text-white animate-bounce">
+                <h1 id="placeTitle" class="text-4xl font-bold mb-2">Title</h1>
+                <p id="placeDescription" class="text-lg">Description about the place.</p>
+            </div>
+
+            <!-- Controls -->
+            <div class="absolute bottom-10 right-10 flex items-center space-x-4">
+                <button onclick="prevSlide()"
+                    class="bg-white text-black px-4 py-2 rounded-full hover:scale-110 transition">⟵</button>
+                <div id="pageIndicator" class="text-white font-bold">1/5</div>
+                <button onclick="nextSlide()"
+                    class="bg-white text-black px-4 py-2 rounded-full hover:scale-110 transition">⟶</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-100" id="packages">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-10">Our Packages</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                <!-- Single Package Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- Front Side -->
+                        <div
+                            class="flip-card-front bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Single Traveler</h3>
+                            <button
+                                class="mt-4 px-6 py-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-full text-lg font-semibold hover:scale-105 transition-all duration-500 animate-bounce">
+                                Details
+                            </button>
+                        </div>
+
+                        <!-- Back Side -->
+                        <div
+                            class="flip-card-back bg-blue-500 text-white p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Single Package</h3>
+                            <p>Includes hotel, breakfast & sightseeing.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Couple Package Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- Front Side -->
+                        <div
+                            class="flip-card-front bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Couple</h3>
+                            <button
+                                class="mt-4 px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full text-lg font-semibold hover:scale-105 transition-all duration-500 animate-bounce">
+                                Details
+                            </button>
+                        </div>
+
+                        <!-- Back Side -->
+                        <div
+                            class="flip-card-back bg-pink-500 text-white p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Couple Package</h3>
+                            <p>Includes hotel, romantic dinner & sightseeing.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Family Package Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- Front Side -->
+                        <div
+                            class="flip-card-front bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Family</h3>
+                            <button
+                                class="mt-4 px-6 py-2 bg-gradient-to-r from-yellow-400 to-red-500 text-white rounded-full text-lg font-semibold hover:scale-105 transition-all duration-500 animate-bounce">
+                                Details
+                            </button>
+                        </div>
+
+                        <!-- Back Side -->
+                        <div
+                            class="flip-card-back bg-green-500 text-white p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Family Package</h3>
+                            <p>Includes hotel, activities for kids & sightseeing.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Button at the End of Packages Section -->
+        <div class="text-center mt-12">
+            <a href="packages.html"
+                class="gradient-btn px-10 py-4 rounded-full text-xl font-bold shadow-lg animate-pop hover:scale-110 transition-all duration-500">
+                View All Packages
+            </a>
+        </div>
+    </section>
+    <section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+
+            <!-- Card 1: Dynamic Ratings -->
+            <div class="bg-white shadow-lg rounded-lg p-8 flex flex-col items-center justify-center w-full h-64">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-6">Customer Ratings</h2>
+                <div class="flex items-center space-x-2 mb-6">
+                    <span class="text-3xl text-yellow-500">&#9733;</span>
+                    <span class="text-3xl text-yellow-500">&#9733;</span>
+                    <span class="text-3xl text-yellow-500">&#9733;</span>
+                    <span class="text-3xl text-yellow-500">&#9733;</span>
+                    <span class="text-3xl text-gray-400">&#9733;</span>
+                </div>
+                <p class="text-xl text-gray-600">Average Rating: <span id="rating"
+                        class="font-bold text-blue-600 text-2xl">4.2</span></p>
+            </div>
+
+            <!-- Card 2: Happy Customers -->
+            <div class="bg-white shadow-lg rounded-lg p-8 flex flex-col items-center justify-center w-full h-64 mb-8">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-6">Happy Customers</h2>
+                <p class="text-xl text-gray-600">We have served over <span id="happy-customers"
+                        class="font-bold text-blue-600 text-2xl">5000+</span> happy customers!</p>
+            </div>
+        </div>
+    </section>
+    <section class="w-full min-h-screen bg-gray-900 flex items-center justify-center p-8" id="contact">
+        <div class="bg-white rounded-2xl shadow-2xl p-10 max-w-3xl w-full">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Get in Touch</h2>
+
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Your Name</label>
+                    <input type="text" id="name"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                        placeholder="Enter your name" required>
+                </div>
+
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Your Email</label>
+                    <input type="email" id="email"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                        placeholder="Enter your email" required>
+                </div>
+
+                <div>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="message" rows="5"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                        placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105 duration-300">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <!-- Modern Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Column 1: About -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">About Us</h3>
+                <p class="text-gray-400 text-sm">
+                    Tour&Travelers is dedicated to providing unforgettable travel experiences. Explore the world with us
+                    and create memories that last a lifetime.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#hero" class="text-gray-400 hover:text-blue-500 transition">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-blue-500 transition">About</a></li>
+                    <li><a href="#places" class="text-gray-400 hover:text-blue-500 transition">Places</a></li>
+                    <li><a href="#packages" class="text-gray-400 hover:text-blue-500 transition">Packages</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-blue-500 transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Newsletter -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Stay updated with the latest travel deals and destinations.
+                </p>
+                <form class="flex flex-col space-y-4">
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full p-3 rounded-lg border border-gray-700 bg-gray-800 text-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                    <button
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105 duration-300">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="border-t border-gray-700 mt-8 pt-6">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+                <!-- Copyright -->
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    © 2025 Tour&Travelers. All rights reserved.
+                </p>
+
+                <!-- Social Links -->
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition">
+                        <svg fill="currentColor" class="h-6 w-6" viewBox="0 0 24 24">
+                            <path
+                                d="M22.54 6.42c-.79.35-1.63.59-2.52.7a4.4 4.4 0 001.92-2.43 8.83 8.83 0 01-2.79 1.07 4.4 4.4 0 00-7.5 4c-3.65-.18-6.88-1.93-9.05-4.59a4.37 4.37 0 00-.6 2.2c0 1.52.77 2.86 1.95 3.64a4.4 4.4 0 01-1.99-.55v.06a4.4 4.4 0 003.52 4.3 4.4 4.4 0 01-1.99.08 4.4 4.4 0 004.1 3.05A8.85 8.85 0 012 19.54a12.47 12.47 0 006.76 1.98c8.11 0 12.54-6.72 12.54-12.54 0-.19 0-.39-.01-.58a8.9 8.9 0 002.19-2.27z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition">
+                        <svg fill="currentColor" class="h-6 w-6" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.04c-5.52 0-10 4.48-10 10 0 5.18 3.94 9.44 9 9.95v-7.04h-2.7v-2.91h2.7v-2.2c0-2.67 1.6-4.13 4.02-4.13 1.16 0 2.15.09 2.44.12v2.83h-1.67c-1.3 0-1.55.62-1.55 1.52v1.97h3.1l-.4 2.91h-2.7V22c5.06-.51 9-4.77 9-9.95 0-5.52-4.48-10-10-10z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Login Modal -->
+        <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Sign In</h2>
+                <form class="space-y-6">
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none text-black"
+                            placeholder="Enter your email">
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label for="password" class="block text-lg font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password" id="password" name="password" required
+                            class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none text-black "
+                            placeholder="Enter your password">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105 duration-300">
+                        Sign In
+                    </button>
+                </form>
+
+                <!-- Close Button -->
+                <button id="closeModal"
+                    class="mt-4 w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 rounded-lg transition">
+                    Close
+                </button>
+            </div>
+        </div>
+        <!-- Registration Modal -->
+        <div id="registerModal"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Register</h2>
+                <form class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="registerName" class="block text-lg font-medium text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="registerName" name="name" required
+                            class="w-full p-3 rounded-lg border text-black border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            placeholder="Enter your full name">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="registerEmail" class="block text-lg font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="registerEmail" name="email" required
+                            class="w-full p-3 rounded-lg text-black border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            placeholder="Enter your email">
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label for="registerPassword"
+                            class="block text-lg font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password" id="registerPassword" name="password" required
+                            class="w-full p-3 rounded-lg text-black border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            placeholder="Create a password">
+                    </div>
+                    <div>
+                        <label for="registerPassword" class="block text-lg font-medium text-gray-700 mb-2"> Confirm
+                            Password</label>
+                        <input type="password" id="registerPassword" name="password" required
+                            class="w-full p-3 rounded-lg text-black border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            placeholder="Confirm Password">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105 duration-300">
+                        Register
+                    </button>
+                </form>
+
+                <!-- Close Button -->
+                <button id="closeRegisterModal"
+                    class="mt-4 w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 rounded-lg transition">
+                    Close
+                </button>
+            </div>
+        </div>
+        <!-- Deals and Discounts Modal -->
+        <div id="dealsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md relative">
+                <!-- Close Button -->
+                <button id="closeDealsModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Modal Content -->
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">🎉 Exclusive Deals & Discounts!</h2>
+                <p class="text-gray-600 text-center mb-6">
+                    Get up to <span class="font-bold text-blue-600">50% off</span> on selected packages. Limited time
+                    offer!
+                </p>
+                <div class="text-center">
+                    <a href="packages.html"
+                        class="px-6 py-3 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-full text-lg font-semibold hover:scale-105 transition-all duration-300">
+                        View Deals
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - Tour&Travelers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full flex items-center justify-between px-8 py-4 bg-cyan-500 shadow-lg z-50">
+        <div class="text-2xl font-extrabold text-white">
+            <a href="index.html">Tour&Travelers</a>
+        </div>
+        <div class="hidden md:flex space-x-10">
+            <a href="index.html#hero" class="text-white text-lg hover-glow">Home</a>
+            <a href="index.html#about" class="text-white text-lg hover-glow">About</a>
+            <a href="index.html#places" class="text-white text-lg hover-glow">Places</a>
+            <a href="index.html#packages" class="text-white text-lg hover-glow">Packages</a>
+            <a href="index.html#contact" class="text-white text-lg hover-glow">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-screen bg-center bg-cover flex items-center justify-center text-center"
+        style="background-image: url('assests/bg5.jpg'); background-size: cover; background-repeat: no-repeat;">
+        <div class="text-white">
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 drop-shadow-lg">Learn More</h1>
+            <p class="text-xl md:text-2xl mb-8 drop-shadow-md">Discover more about our services, packages, and destinations.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20 bg-white px-6 md:px-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-12">Why Choose Us?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Unforgettable Experiences</h3>
+                <p class="text-gray-600">We provide unique and memorable travel experiences tailored to your preferences.</p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">Affordable Packages</h3>
+                <p class="text-gray-600">Our packages are designed to fit your budget without compromising quality.</p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">24/7 Support</h3>
+                <p class="text-gray-600">Our team is available around the clock to assist you with your travel needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gray-900 text-white text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Journey?</h2>
+        <p class="text-xl md:text-2xl mb-8">Explore our packages and find the perfect destination for your next adventure.</p>
+        <a href="index.html#packages"
+            class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-semibold transition-all duration-300">
+            View Packages
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">About Us</h3>
+                <p class="text-gray-400 text-sm">
+                    Tour&Travelers is dedicated to providing unforgettable travel experiences. Explore the world with us
+                    and create memories that last a lifetime.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html#hero" class="text-gray-400 hover:text-blue-500 transition">Home</a></li>
+                    <li><a href="index.html#about" class="text-gray-400 hover:text-blue-500 transition">About</a></li>
+                    <li><a href="index.html#places" class="text-gray-400 hover:text-blue-500 transition">Places</a></li>
+                    <li><a href="index.html#packages" class="text-gray-400 hover:text-blue-500 transition">Packages</a></li>
+                    <li><a href="index.html#contact" class="text-gray-400 hover:text-blue-500 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                <form class="flex flex-col space-y-4">
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full p-3 rounded-lg border border-gray-700 bg-gray-800 text-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                    <button
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105 duration-300">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

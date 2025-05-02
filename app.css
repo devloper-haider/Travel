@@ -1,0 +1,180 @@
+        /* Glow effect for nav links */
+        .hover-glow:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+        }
+
+        .flip-card-front {
+            background-color: #fff;
+            color: black;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Neon glow effect */
+        .neon-image {
+            position: relative;
+            animation: pop-up 1s ease-out, neon-glow 2s infinite alternate;
+        }
+
+        /* Pop-up animation */
+        @keyframes pop-up {
+            0% {
+                transform: scale(21.2rem);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Neon glow animation */
+        @keyframes neon-glow {
+            0% {
+                box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+            }
+
+            25% {
+                box-shadow: 0 0 10px #fbff00, 0 0 20px #e6ea06, 0 0 30px #e6ea06, 0 0 40px #e6ea06;
+            }
+
+            50% {
+                box-shadow: 0 0 10px #0952d9, 0 0 20px #0952d9, 0 0 30px #0952d9, 0 0 40px #0952d9;
+            }
+
+            75% {
+                box-shadow: 0 0 10px #ef5918, 0 0 20px #ef5918, 0 0 30px #ef5918, 0 0 40px #ef5918;
+            }
+
+            100% {
+                box-shadow: 0 0 20px #62db17, 0 0 30px #62db17, 0 0 40px #62db17, 0 0 50px #62db17;
+            }
+        }
+
+        /* Pop-up animation */
+        @keyframes pop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-pop {
+            animation: pop 1s ease-out forwards;
+        }
+
+        /* Gradient button animation */
+        .gradient-btn {
+            background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+            background-size: 800% 800%;
+            animation: gradientMove 5s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Additional Responsive Fixes */
+
+        /* Make About Us text align better on small screens */
+        @media (max-width: 768px) {
+            #about-us-text {
+                text-align: center;
+                padding: 0 20px;
+            }
+        }
+
+        /* Hero Section Adjustments */
+        @media (max-width: 1024px) {
+            #hero {
+                background-position: center;
+                background-size: cover;
+            }
+
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+
+            #hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* About Us Image Section */
+        @media (max-width: 768px) {
+            .neon-image {
+                width: 90% !important;
+                height: auto !important;
+                margin: 0 auto;
+                border-radius: 20px !important;
+            }
+        }
+
+        /* Navbar spacing fix for mobile */
+        @media (max-width: 768px) {
+            nav {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+
+        /* Buttons in Hero Section */
+        @media (max-width: 768px) {
+            .gradient-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
